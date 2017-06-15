@@ -1,0 +1,68 @@
+/*
+Theme Name: RnMaterial
+Theme URI: https://jakting.com
+Author: Jartip Hwang
+Author URI: https://jakting.com
+Description: Maybe it is the best Material Design WordPress Theme. This Theme is Migrated from hexo-theme-material(https://github.com/viosey/hexo-theme-material)
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, light, one-column, material
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body,html {
+	font-family:Roboto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif
+}
+a {
+	color:#607d8b
+}
+#scheme-Paradox .hot_tags-count,#scheme-Paradox .sidebar-colored .sidebar-badge,#scheme-Paradox .sidebar-colored .sidebar-header,#scheme-Paradox .sidebar_archives-count,#search-form-label:after,#search-label,.mdl-card__media {
+	background-color:#607d8b!important
+}
+#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus,#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover {
+	color:#607d8b!important
+}
+#ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a,#post_entry-right-info,.sidebar-colored .sidebar-nav li:hover>a,.sidebar-colored .sidebar-nav li:hover>a i,.sidebar-colored .sidebar-nav li>a:focus i,.sidebar-colored .sidebar-nav li>a:hover,.sidebar-colored .sidebar-nav li>a:hover i,.sidebar-colored .sidebar-nav>.open>a,.sidebar-colored .sidebar-nav>.open>a:focus,.sidebar-colored .sidebar-nav>.open>a:hover {
+	color:#607d8b!important
+}
+.toTop {
+	background:#607d8b!important
+}
+.material-layout .material-index>.material-nav,.material-layout .material-post>.material-nav,.material-nav a {
+	color:#607d8b
+}
+#scheme-Paradox .MD-burger-layer {
+	background-color:#607d8b
+}
+#scheme-Paradox #post-toc-trigger-btn {
+	color:#607d8b
+}
+.post-toc a:hover {
+	color:#607d8b;
+	text-decoration:underline
+}
+body {
+	background-color:#e9ebec
+}
+#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
+	background-color:#fff
+}
+.fade {
+	transition:all .2s linear;
+	-webkit-transform:translate3d(0,0,0);
+	-moz-transform:translate3d(0,0,0);
+	-ms-transform:translate3d(0,0,0);
+	-o-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
+	opacity:1
+}
+.fade.out {
+	opacity:0
+}
+
+
+
+
