@@ -33,13 +33,13 @@
               <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><?php the_content();?></div>
               <?php endwhile; endif;?>
 			<div id="disqus-comment">
-			
+			<?php comments_template();?>
 			</div>
             
 			</div>
           </div>
         </div>
-            <?php include "/nav.php"; ?>
+            <?php get_template_part( 'nav', 'index' ); ?>
         </aside>
         <div id="back-to-top" class="toTop-wrap">
           <a href="#top" class="toTop">

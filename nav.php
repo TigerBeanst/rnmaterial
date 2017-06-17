@@ -1,3 +1,5 @@
+<style>.sub-menu{margin-left:-40px!important;background-color:#e0e0e0;display: none;} .menu-item-has-children:hover > .sub-menu {display: block;}</style>
+	<script>$('li[class="menu-item-has-children"]').click(function(){$(this).toggleClass('active');});</script>
 <div class="sidebar-overlay"></div>
         <aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
           <div id="sidebar-main">
@@ -11,14 +13,19 @@
               </button>
               <div class="sidebar-image">
                 <img src="<?php bloginfo('template_url');?>/img/avatar.png" alt="avatar"></div>
-              <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">rnmaterial@www.com
-                <b class="caret"></b></a>
+              <a class="sidebar-brand"><?php echo bloginfo('name'); ?></a>
             </div>
 <ul class="nav sidebar-nav">
               <li class="dropdown">
                 <ul id="settings-dropdown" class="dropdown-menu">
                   <li>
 				  <!--请自行修改邮箱，或改为所需文本-->
+			  <!--
+			  此处的图标名称参考：
+			  http://google.github.io/material-design-icons/#which-icons-should-be-mirrored-for-rtl- （这里有个-）
+			  https://material.io/icons/
+			  -->
+				  
                     <a href="mailto:rnmaterial@www.com" target="_blank" title="Email Me">
                       <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>Email Me</a></li>
                   <li>
@@ -28,41 +35,7 @@
               </li>
 			  
 			  <!--请结合HTML自行修改侧边栏内容-->
-			  <div style="margin-left:-40px!important;"><?php wp_nav_menu('container_id=navmenu'); ?></div>
-              <!--<li id="sidebar-first-li">
-                <a href="<?php bloginfo('url');?>">
-                  <i class="material-icons sidebar-material-icons">home</i>主页</a></li>
-              <li class="dropdown">
-                <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                  <i class="material-icons sidebar-material-icons">apps</i>分类
-                  <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="sidebar_archives-link" href="/">菜单1</a>
-                  </li>
-                  <li>
-                    <a class="sidebar_archives-link" href="/">菜单2</a>
-                  </li>
-                </ul>
-              </li>-->
+			  <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_two' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
               <li class="divider"></li>
-			  <!--
-			  此处的图标名称参考：
-			  http://google.github.io/material-design-icons/#which-icons-should-be-mirrored-for-rtl- （这里有个-）
-			  https://material.io/icons/
-			  
-			  链接请自行更改
-			  -->
-              <li>
-                <a href="/" title="关于">
-                  <i class="material-icons sidebar-material-icons">person</i>关于</a></li>
-              <li>
-                <a href="/" title="标签">
-                  <i class="material-icons sidebar-material-icons">bookmark</i>标签</a></li>
-              <li>
-                <a href="/" title="映像">
-                  <i class="material-icons sidebar-material-icons">photo</i>映像</a></li>
-              <li>
-                <a href="/" title="友链">
-                  <i class="material-icons sidebar-material-icons">people</i>友链</a></li>
+              <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_three' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
             </ul>

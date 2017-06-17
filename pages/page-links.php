@@ -3,57 +3,51 @@
 Template Name: 友链页面
 */
 ?>
-<?php get_header();?>
-	<div class="row">
-	  <h1 class="red-text" style="text-align: center;font-size: 3.3rem;">小伙伴们</h1>
-	  <div class="divider"></div>
-	  <p class="grey-text" style="text-align: center;"><?php bloginfo('name');?>, &nbsp;Since <?php echo get_option('mad')['start_year']?></p>
-	</div>
-	<div class="row">
-    <div class="col m6 offset-m3 s12" id="archives"> 
-    	  <?php $args = array(
-    'categorize' => 1, // 是否分类别显示链接表
-    'category' => null, // (string) Comma separated list of numeric Category IDs to be displayed. If none is specified, all Categories with bookmarks are shown. Defaults to (all Categories).
-    'exclude_category' => null, // (string) Comma separated list of numeric Category IDs to be excluded from display. Defaults to (no categories excluded).
-    'category_name' => null, // (string) The name of a Category whose bookmarks will be displayed. If none is specified, all Categories with bookmarks are shown. Defaults to (all Categories).
-    'category_before' => '<div class="link-list">', // 分类别显示时，分类名称前置代码
-    'category_after' => '</div>',
-    'class' => '', // (string) The class each category li will have on it. Defaults to 'linkcat' . (This parameter was added with Version 2.2)
-    'category_orderby' => 'id', // (string) Value to sort Categories on. Valid options:'name' - Default; 'id'; 'slug'; 'count'; 'term_group' (not used yet)
-    'category_order' => 'ASC', // (string) Sort order, ascending or descending for the category_orderby parameter. Valid values: ASC - Default; DESC
-
-// When categorize set to 0, the following 3 params become active
-    'title_li' => null, // (string) Text for the heading of the links list. Defaults to '__('Bookmarks')', which displays "Bookmarks" (the __('') is used for localization purposes). Only used when categorize are set to 0 [false] (else the category names will be used instead). If 'title_li' is set to null (0) value, no heading is displayed, and the list will not be wrapped with <ul>, </ul> tags (be sure to pass the categorize option to 0 [false] to this option takes effect).
-    'title_before' => '<h2>', // (string) Text to place before each Category description if 'categorize' is 1 [true], or text defined in "title_li" if 'categorize' is 0 [false]. Defaults to '<h2>'.
-    'title_after' => '</h2>', // (string) Text to place after each Category description if 'categorize' is 1 [true], or text defined in "title_li" if 'categorize' is 0 [false]. Defaults to '</h2>'.
-// Overall sets for individual bookmark
-    'show_private' => '', // (boolean) Should a Category be displayed even if the Category is considered private. Ignore the admin setting and show private Categories (TRUE) or do NOT show private Categories (FALSE). 1 (True); 0 (False) - Default
-    'include' => null, // (string) Comma separated list of numeric bookmark IDs to include in the output. For example, 'include=1,3,6' means to return or echo bookmark IDs 1, 3, and 6. If the include string is used, the category, category_name, and exclude parameters are ignored. Defaults to (all Bookmarks).
-    'exclude' => null, // (string) Comma separated list of numeric bookmark IDs to exclude. For example, 'exclude=4,12' means that bookmark IDs 4 and 12 will NOT be returned or echoed. Defaults to (exclude nothing).
-// Per category
-    'orderby' => '', // (string) Value to sort bookmarks on. This can be a COMMA separated list of values. Defaults to 'name' unless you pass the value of '' (empty), in which case it sets to 'id'.
-    'order' => 'DESC', // (string) Bookmarks display sorting order, ascending or descending as defined in the 'orderby' parameter. Valid values: ASC - Default; DESC
-// Overall
-    'limit' => -1, // (integer) Maximum number of bookmarks to display. Default is -1 (all bookmarks).
-// Overall sets for individual bookmark
-    'before' => '<ul class="collapsible popout"><li class="collapsible-header active"><dt>', //
-    'after' => '</dd></li></ul>', // (string) Text to place after each bookmark. Defaults to '</li>'.
-    'link_before' => '', // (string) Text to place before the text of each bookmark, inside the hyperlink code. There is no set default. (This parameter was added with Version 2.7)
-    'link_after' => '', // (string) Text to place after the text of each bookmark. There is no set default. (This parameter was added with Version 2.7)
-    'between' => '</dt><dd>', // (string) Text to place between each bookmark/image and its description. Defaults to '\n' (newline).
-    'show_images' => 0, // (boolean) Should images for bookmarks be shown (TRUE) or not (FALSE). 1 (True) - Default; 0 (False)
-    'show_description' => 1, // (boolean) Should the description be displayed (TRUE) or not (FALSE). Valid when show_images is FALSE, or an image is not defined. 1 (True); 0 (False) - Default
-    'show_name' => 0, // (boolean) Displays the text of a link when (TRUE). Works when show_images is TRUE. (This parameter was added with Version 2.7) 1 (True); 0 (False) - Default
-    'show_rating' => 0, // (boolean) Should rating stars/characters be displayed (TRUE) or not (FALSE). 1 (True); 0 (False) - Default
-    'show_updated' => 0, // (boolean) Should the last updated timestamp be displayed (TRUE) or not (FALSE). Note that link_updated does not track local modifications. It tracks when whatever the link points to is updated via remote requests to pingomatic. 1 (True); 0 (False) - Default
-    'hide_invisible' => 1, // (boolean) Should bookmark be displayed even if it's Visible setting is No. Abides by admin setting (TRUE) or does no abide by admin setting (FALSE). 1 (True) - Default; 0 (False)
-    'echo' => 1, // (boolean) Display bookmarks (TRUE) or return them for use by PHP (FALSE). 1 (True) - Default; 0 (False)
-);
-?>
-
-<div class="entry-content">
-    <?php wp_list_bookmarks( $args ); ?>
-</div>
-      </ul></div><!-- #archives -->    
-      </div>
+<?php get_header();?>	
+  <body id="scheme-Paradox" class="lazy">
+    <div class="material-layout mdl-js-layout has-drawer is-upgraded">
+      <main class="material-layout__content" id="main">
+        <div id="top"></div>
+        <button class="MD-burger-icon sidebar-toggle">
+          <span class="MD-burger-layer"></span>
+        </button>
+        <div class="material-post_container">
+          <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+              <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");echo $img_src[0]; ?>)">
+                <p class="article-headline-p"><?php the_title();?></p></div>
+              <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+                <div id="author-avatar">
+                  <img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="44px" height="44px" alt="Author Avatar"></div>
+                <div>
+                  <strong><?php the_author(); ?></strong>
+                  <span><?php the_time('M月 d, Y')?></span></div>
+                <div class="section-spacer"></div>
+                <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                  <i class="material-icons" role="presentation">share</i>
+                  <span class="visuallyhidden">share</span></button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+                  <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=<?php the_title();?>&url=<?php the_permalink();?>&pic=&searchPic=false&style=simple" target="_blank">
+                    <li class="mdl-menu__item">分享到微博</li></a>
+                  <a class="post_share-link" href="https://plus.google.com/share?url=<?php the_permalink();?>" target="_blank">
+                    <li class="mdl-menu__item">分享到 Google+</li></a>
+                </ul>
+              </div>
+			  <style>.lists{padding:5px;margin:25px auto auto 0}.linkcat{font-size:12px;font-weight:bolder;padding:5px;margin-bottom:15px;list-style:none;clear:both}.lists li h2{font-size:14px;margin-bottom:15px;color:#616161}.listcat ul{margin-left:20px}.linkcat ul li{background:0;border:0;border-radius:2px;color:#000;position:relative;height:36px;margin:10px 10px 10px 10px;min-width:64px;padding:0 16px;display:inline-block;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0;overflow:hidden;will-change:box-shadow;transition:box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline:0;cursor:pointer;text-decoration:none;text-align:center;line-height:36px;vertical-align:middle;-webkit-tap-highlight-color:transparent;-webkit-tap-highlight-color:rgba(255,255,255,0);background:rgba(158,158,158,.2);box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}.linkcat ul li a{color:#616161;text-decoration:none}.linkcat ul li a img{margin-right:3px}.linkcat ul li a:visited{color:#616161}.tips{font-size:14px;margin-bottom:18px;margin-left:5px}</style>
+              <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><div class="lists"><p class="tips">站点随机排序</p><?php wp_list_bookmarks('orderby=rand&show_images=1'); ?></div></div>
+              <?php endwhile; endif;?>
+			<div id="disqus-comment">
+			<?php comments_template();?>
+			</div>
+            
+			</div>
+          </div>
+        </div>
+            <?php get_template_part( 'nav', 'index' ); ?>
+        </aside>
+        <div id="back-to-top" class="toTop-wrap">
+          <a href="#top" class="toTop">
+            <i class="material-icons footer_top-i">expand_less</i></a>
+        </div>
 <?php get_footer();?>

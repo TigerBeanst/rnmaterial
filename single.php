@@ -33,10 +33,6 @@
               <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><?php the_content();?></div>
               <?php endwhile; endif;?>
 			  <style>#disqus-comment{background-color:#eee;padding:2pc}</style>
-			<div id="disqus-comment">
-			<?php comments_template();?>
-			</div>
-            
 			</div>
 			<nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
 			<?php $current_category = get_the_category();$prev_post = get_previous_post($current_category,'');$next_post = get_next_post($current_category,'')?>
@@ -50,6 +46,9 @@
                   <i class="material-icons">arrow_forward</i></button>
               </a></span><?php endif; ?>
             </nav>
+            <?php comments_template();?>
+			
+			
           </div>
         </div>
             <?php get_template_part( 'nav', 'index' ); ?>
