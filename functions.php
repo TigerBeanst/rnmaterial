@@ -9,6 +9,7 @@ add_action( 'after_setup_theme', 'RM_add_theme_support_title' );
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 884, 280, true ); 
 
-
+//注册导航栏
+register_nav_menus();
 
 ?>

@@ -171,7 +171,7 @@ html{display:block}body{display:block;margin:0;padding:0;top:0;right:0;bottom:0;
 .sidebar .sidebar-text:focus,.sidebar .sidebar-text:hover{-webkit-box-shadow:none;box-shadow:none;outline:0}.sidebar .sidebar-text .caret{position:absolute;right:24px;top:24px}
 .sidebar .sidebar-text .sidebar-badge,.sidebar .hot_tags-count,.sidebar .sidebar_archives-count{position:absolute;right:16px;top:12px}.sidebar .sidebar-icon{display:inline-block;margin-right:16px;min-width:40px;width:40px;text-align:left;font-size:20px}
 .sidebar .sidebar-icon:after,.sidebar .sidebar-icon:before{vertical-align:middle}.sidebar .sidebar-nav{margin:0;padding:0}.sidebar .sidebar-nav li{position:relative;list-style-type:none}
-.sidebar .sidebar-nav li a{position:relative;cursor:pointer;user-select:none;display:block;padding:0 56px 0 16px;transition:all .2s ease-in-out}.sidebar .sidebar-nav li a:focus,.sidebar .sidebar-nav li a:hover{-webkit-box-shadow:none;box-shadow:none;outline:0}
+.sidebar .sidebar-nav li a{position:relative;cursor:pointer;user-select:none;display:block;padding:0 0 0 0;transition:all .2s ease-in-out}.sidebar .sidebar-nav li a:focus,.sidebar .sidebar-nav li a:hover{-webkit-box-shadow:none;box-shadow:none;outline:0}
 .sidebar .sidebar-nav li a .caret{position:absolute;right:24px;top:24px;transition:.3s}.sidebar .sidebar-nav li.open a .caret{transform:rotate(-180deg)}
 .sidebar .sidebar-nav li a .sidebar-badge,.hot_tags-count,.sidebar_archives-count{position:absolute;right:16px;top:12px}.sidebar .sidebar-nav li a:hover{background:0}
 .sidebar .sidebar-nav .dropdown-menu{position:relative;width:100%;margin:0;padding:0;border:0;border-radius:0;-webkit-box-shadow:none;box-shadow:none}

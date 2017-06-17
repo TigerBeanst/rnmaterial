@@ -51,7 +51,6 @@
               </ul>
             </div>
           </div>
-          <div class="locate-thumbnail-symbol"></div>
 		  
 		  
 		  
@@ -59,7 +58,7 @@
 		  
 		  
 		  
-		  
+		
 		  <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
           <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
             <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");echo $img_src[0]; ?>)">
@@ -82,8 +81,12 @@
               </div>
             </div>
           </div>
+		  
+		  <li><?php next_posts_link('&laquo; Older Entries') ?></li>
+          <li><?php previous_posts_link('Newer Entries &raquo;') ?></li>
 		  <?php endwhile; ?>
   	      <?php endif; ?>
+		  
           <nav class="material-nav mdl-cell mdl-cell--12-col">
             <span class="page-number current">1</span>
             <a class="page-number" href="/page/2/">2</a>
