@@ -28,7 +28,8 @@
               </li>
 			  
 			  <!--请结合HTML自行修改侧边栏内容-->
-              <li id="sidebar-first-li">
+			  <div style="margin-left:-40px!important;"><?php wp_nav_menu('container_id=navmenu'); ?></div>
+              <!--<li id="sidebar-first-li">
                 <a href="<?php bloginfo('url');?>">
                   <i class="material-icons sidebar-material-icons">home</i>主页</a></li>
               <li class="dropdown">
@@ -43,7 +44,7 @@
                     <a class="sidebar_archives-link" href="/">菜单2</a>
                   </li>
                 </ul>
-              </li>
+              </li>-->
               <li class="divider"></li>
 			  <!--
 			  此处的图标名称参考：
