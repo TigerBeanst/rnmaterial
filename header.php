@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="display:none" lang="zh">
+<html lang="zh">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -7,12 +7,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="theme-color" content="#607D8D">
     <meta name="author" content="neoFelhz">
-    <meta name="description" itemprop="description" content="neoFelhz, 一枚爱折腾的萌新. 这是我的小博客一枚">
+    <meta name="description" itemprop="description" content="">
     <link rel="canonical" href="<?php echo bloginfo('url');?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url');?>/css/material.min.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url');?>/css/style.min.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo bloginfo('template_url');?>/css/prism.css"/>
-	<script src="<?php echo bloginfo('template_url');?>/js/material.min.js"></script>
+    <link rel="preload" href="<?php echo bloginfo('template_url');?>/css/material.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="<?php echo bloginfo('template_url');?>/css/style.min.css" as="style" onload="this.rel='stylesheet'">
+    <script src="<?php echo bloginfo('template_url');?>/js/material.min.js"></script>
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="/css/ie-blocker.css">
       <script src="/js/ie-blocker.zhCN.js"></script>
@@ -41,5 +40,4 @@
         this.startDebug = u
       }
       var queue = new Queue</script>
-    <link rel="preload" href="<?php echo bloginfo('template_url');?>/fonts/MaterialIcons-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <?php wp_head();?></head>
