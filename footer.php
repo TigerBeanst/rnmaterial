@@ -16,9 +16,9 @@
             <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank" class="footer-develop-a">CC BY-NC-SA 3.0</a>进行许可</div>
           </div>
         </footer>
-        <script>lsloader.load("<?php echo bloginfo('template_url');?>/js/lazyload.min.js", "<?php echo bloginfo('template_url');?>/js/lazyload.min.js")</script>
-        <script>lsloader.load("<?php echo bloginfo('template_url');?>/js/js.min.js", "<?php echo bloginfo('template_url');?>/js/js.min.js")</script>
-        <script>lsloader.load("<?php echo bloginfo('template_url');?>/js/nprogress.js", "<?php echo bloginfo('template_url');?>/js/nprogress.js")</script>
+        <script src="<?php echo bloginfo('template_url');?>/js/lazyload.min.js"></script>
+        <script src="<?php echo bloginfo('template_url');?>/js/js.min.js"></script>
+        <script src="<?php echo bloginfo('template_url');?>/js/nprogress.js"></script>
         <script type="text/ls-javascript" id="NProgress-script">NProgress.configure({
             showSpinner: true
           });
