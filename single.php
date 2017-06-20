@@ -40,11 +40,11 @@
 			  <a href="<?php echo get_permalink( $prev_post->ID ); ?>" id="post_nav-newer" class="prev-content">
                 <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                   <i class="material-icons">arrow_back</i></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 旧篇</a></span>
-              <?php endif; ?><?php if (!empty( $next_post )): ?>
+              <?php endif; ?>
+			  <?php if (!empty( $next_post )): ?>
 			  <span align="right"><a href="<?php echo get_permalink( $next_post->ID ); ?>" id="post_nav-older" class="next-content">新篇 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                  <i class="material-icons">arrow_forward</i></button>
-              </a></span><?php endif; ?>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation"><i class="material-icons">arrow_forward</i></button> </a></span>
+			  <?php endif; ?>
             </nav>
             <?php comments_template();?>
 			
