@@ -17,7 +17,7 @@
                   <img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="44px" height="44px" alt="Author Avatar"></div>
                 <div>
                   <strong><?php the_author(); ?></strong>
-                  <span><?php the_time('M月 d, Y')?></span></div>
+                  <span><?php the_time('M d, Y')?></span></div>
                 <div class="section-spacer"></div>
                 <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                   <i class="material-icons" role="presentation">share</i>

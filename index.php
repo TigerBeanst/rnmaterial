@@ -73,7 +73,7 @@
                   <img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="44px" height="44px" alt="neoFelhz's avatar"></div>
                 <div>
                   <strong><?php the_author(); ?></strong>
-                  <span><?php the_time('M月 d, Y')?></span></div>
+                  <span><?php the_time('M d, Y')?></span></div>
               </div>
               <div id="post_entry-right-info">
                 <span>
@@ -84,17 +84,9 @@
 		  <?php endwhile; ?>
   	      <?php endif; ?>
 		  
-          <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span>
-            <a class="page-number" href="/page/2/">2</a>
-            <a class="page-number" href="/page/3/">3</a>
-            <a class="page-number" href="/page/10/">10</a>
-            <a class="extend next" rel="next" href="/page/2/">
-              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                <i class="material-icons" role="presentation">arrow_forward</i></button>
-            </a>
-			
-			
+          <nav class="nav-body">
+		  <div class="nav-next"><?php next_posts_link(__('<i class="material-icons sidebar-material-icons">navigate_before</i>')) ?></div>
+         <div class="nav-prev"><?php previous_posts_link(__('<i class="material-icons sidebar-material-icons">navigate_next</i>')) ?></div>
           </nav>
           <script type="text/ls-javascript" id="thumbnail-script">var randomNum;
 

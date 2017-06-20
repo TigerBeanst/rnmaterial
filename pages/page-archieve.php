@@ -1,4 +1,11 @@
+<?php
+/*
+Template Name: 归档页面
+*/
+?>
 <?php get_header();?>	
+<script>(function($,window){$(function(){var $a=$("#archives"),$m=$(".al_mon",$a),$l=$(".al_post_list",$a),$l_f=$(".al_post_list:first",$a);$l.hide();$l_f.show();$m.css("cursor","s-resize").on("click",function(){$(this).next().slideToggle(400)});var animate=function(index,status,s){if(index>$l.length){return}if(status=="up"){$l.eq(index).slideUp(s,function(){animate(index+1,status,(s-10<1)?0:s-10)})}else{$l.eq(index).slideDown(s,function(){animate(index+1,status,(s-10<1)?0:s-10)})}};$("#al_expand_collapse").on("click",function(e){e.preventDefault();if($(this).data("s")){$(this).data("s","");animate(0,"up",100)}else{$(this).data("s",1);animate(0,"down",100)}})})})(jQuery,window);</script>
+<style>ul{list-style-type:none} #al_expand_collapse{background:0;border:0;border-radius:2px;position:relative;height:36px;margin:0;min-width:64px;padding:0 16px;display:inline-block;font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:0;overflow:hidden;will-change:box-shadow;transition:box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);outline:0;cursor:pointer;text-decoration:none;text-align:center;line-height:36px;vertical-align:middle;-webkit-tap-highlight-color:transparent;-webkit-tap-highlight-color:rgba(255,255,255,0);background:rgba(158,158,158,.2);box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}</style>
   <body id="scheme-Paradox" class="lazy">
     <div class="material-layout mdl-js-layout has-drawer is-upgraded">
       <main class="material-layout__content" id="main">
@@ -30,7 +37,7 @@
                 </ul>
               </div>
 			  
-              <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><?php the_content();?></div>
+              <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><?php zww_archives_list(); ?></div>
               <?php endwhile; endif;?>
 			  <style>#disqus-comment{background-color:#eee;padding:2pc}</style>
 			</div>
