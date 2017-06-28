@@ -9,8 +9,8 @@
     <meta name="author" content="">
     <meta name="description" itemprop="description" content="">
     <link rel="canonical" href="<?php echo bloginfo('url');?>">
-	<link rel="preload" href="<?php echo bloginfo('template_url');?>/css/material.min.css" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="<?php echo bloginfo('template_url');?>/css/style.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/material.min.css">
+    <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/style.min.css">
     <script src="<?php echo bloginfo('template_url');?>/js/material.min.js"></script>
     <!--[if lte IE 9]>
       <link rel="stylesheet" href="/css/ie-blocker.css">
