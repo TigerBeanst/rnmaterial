@@ -65,7 +65,7 @@
               <p class="article-headline-p">
                 <a href="<?php the_permalink();?>"><?php the_title();?></a></p>
             </div>
-            <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content"><?php echo wp_trim_words(get_the_content(),200);?>
+            <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content"><?php the_excerpt();?>
             </div>
             <div id="post_entry-info">
               <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600">
