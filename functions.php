@@ -149,4 +149,8 @@ ob_start("wp_compress_html_main");
 }
 add_action('get_header', 'wp_compress_html');
 
+
+
+//添加友情链接
+add_filter( "pre_option_link_manager_enabled", "__return_true" );
 ?>
