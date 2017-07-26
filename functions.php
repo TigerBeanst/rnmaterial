@@ -153,4 +153,12 @@ add_action('get_header', 'wp_compress_html');
 
 //添加友情链接
 add_filter( "pre_option_link_manager_enabled", "__return_true" );
+
+//禁止加载默认jq库
+function my_enqueue_scripts() {
+wp_deregister_script('jquery');
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
+
+
 ?>
