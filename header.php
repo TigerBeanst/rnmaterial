@@ -12,7 +12,19 @@
     <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/material.min.css">
     <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/style.min.css">
     <script src="<?php echo bloginfo('template_url');?>/js/material.min.js"></script>
-    <!--[if lte IE 9]>
+    <script src="<?php echo bloginfo('template_url');?>/js/pangu.js"></script>
+    <script>pangu.spacingPage();</script>
+    <script>
+(function(u, c) {
+  var d = document, t = 'script', o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function(e) { c(e); }); }
+  s.parentNode.insertBefore(o, s);
+})('//cdn.bootcss.com/pangu/3.3.0/pangu.min.js', function() {
+  pangu.spacingPage();
+});
+</script>    <!--[if lte IE 9]>
       <link rel="stylesheet" href="/css/ie-blocker.css">
       <script src="/js/ie-blocker.zhCN.js"></script>
     <![endif]-->
