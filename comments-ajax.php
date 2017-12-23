@@ -88,9 +88,9 @@ if ( '' == $comment_content )
 
 // 增加: 錯誤提示功能
 function err($ErrMsg) {
-    header('HTTP/1.1 405 Method Not Allowed');
-    echo $ErrMsg;
-    exit;
+	header('HTTP/1.1 405 Method Not Allowed');
+	echo $ErrMsg;
+	exit;
 }
 
 // 增加: 檢查重覆評論功能
@@ -98,16 +98,16 @@ $dupe = "SELECT comment_ID FROM $wpdb->comments WHERE comment_post_ID = '$commen
 if ( $comment_author_email ) $dupe .= "OR comment_author_email = '$comment_author_email' ";
 $dupe .= ") AND comment_content = '$comment_content' LIMIT 1";
 if ( $wpdb->get_var($dupe) ) {
-    err(__('Duplicate comment detected; it looks as though you&#8217;ve already said that!'));
+	err(__('Duplicate comment detected; it looks as though you&#8217;ve already said that!'));
 }
 
 // 增加: 檢查評論太快功能
 if ( $lasttime = $wpdb->get_var( $wpdb->prepare("SELECT comment_date_gmt FROM $wpdb->comments WHERE comment_author = %s ORDER BY comment_date DESC LIMIT 1", $comment_author) ) ) { 
-$time_lastcomment = mysql2date('U', $lasttime, false);
-$time_newcomment  = mysql2date('U', current_time('mysql', 1), false);
-$flood_die = apply_filters('comment_flood_filter', false, $time_lastcomment, $time_newcomment);
-if ( $flood_die ) {
-    err(__('You are posting comments too quickly.  Slow down.'));
+	$time_lastcomment = mysql2date('U', $lasttime, false);
+	$time_newcomment  = mysql2date('U', current_time('mysql', 1), false);
+	$flood_die = apply_filters('comment_flood_filter', false, $time_lastcomment, $time_newcomment);
+	if ( $flood_die ) {
+		err(__('You are posting comments too quickly.  Slow down.'));
 	}
 }
 
@@ -117,10 +117,10 @@ $commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_emai
 
 // 增加: 檢查評論是否正被編輯, 更新或新建評論
 if ( $edit_id ){
-$comment_id = $commentdata['comment_ID'] = $edit_id;
-wp_update_comment( $commentdata );
+	$comment_id = $commentdata['comment_ID'] = $edit_id;
+	wp_update_comment( $commentdata );
 } else {
-$comment_id = wp_new_comment( $commentdata );
+	$comment_id = wp_new_comment( $commentdata );
 }
 
 $comment = get_comment($comment_id);
@@ -136,14 +136,14 @@ do_action('set_comment_cookies', $comment, $user);
 $comment_depth = 1;   //为评论的 class 属性准备的
 $tmp_c = $comment;
 while($tmp_c->comment_parent != 0){
-$comment_depth++;
-$tmp_c = get_comment($tmp_c->comment_parent);
+	$comment_depth++;
+	$tmp_c = get_comment($tmp_c->comment_parent);
 }
 
 //以下是評論式樣, 不含 "回覆". 要用你模板的式樣 copy 覆蓋.
 ?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<div id="comment-<?php comment_ID(); ?>">
+<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+	<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment,$size='40',$default='<path_to_url>' ); ?>
 			<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link() ); ?>

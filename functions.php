@@ -1,7 +1,7 @@
 <?php
 //添加<title>标题
 function RM_add_theme_support_title(){
-    add_theme_support( 'title-tag' );
+	add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'RM_add_theme_support_title' );
 
@@ -11,10 +11,10 @@ set_post_thumbnail_size( 884, 280, true );
 
 //注册导航栏
 register_nav_menus( array(
- 'sidebar_menu_one' => '侧边栏一菜单' ,
- 'sidebar_menu_two' => '侧边栏二菜单' ,
- 'sidebar_menu_three' => '侧边栏三菜单' ,
- ) );
+	'sidebar_menu_one' => '侧边栏一菜单' ,
+	'sidebar_menu_two' => '侧边栏二菜单' ,
+	'sidebar_menu_three' => '侧边栏三菜单' ,
+) );
 
  //ajax评论
 if (!is_admin()) {
@@ -77,18 +77,18 @@ function clear_db_cache_archives_list() {
 add_action('save_post', 'clear_db_cache_archives_list'); // 新发表文章/修改文章时
 
 //邮件通知 by Qiqiboy 
- function comment_mail_notify($comment_id) {
+function comment_mail_notify($comment_id) {
      $comment = get_comment($comment_id);//根据id获取这条评论相关数据
      $content=$comment->comment_content;
      //对评论内容进行匹配
      $match_count=preg_match_all('/<a href="#comment-([0-9]+)?" rel="nofollow">/si',$content,$matchs);
      if($match_count>0){//如果匹配到了
          foreach($matchs[1] as $parent_id){//对每个子匹配都进行邮件发送操作
-             SimPaled_send_email($parent_id,$comment);
+         	SimPaled_send_email($parent_id,$comment);
          }
      }elseif($comment->comment_parent!='0'){//以防万一，有人故意删了@回复，还可以通过查找父级评论id来确定邮件发送对象
-         $parent_id=$comment->comment_parent;
-         SimPaled_send_email($parent_id,$comment);
+     	$parent_id=$comment->comment_parent;
+     	SimPaled_send_email($parent_id,$comment);
      }else return;
  }
  add_action('comment_post', 'comment_mail_notify');
@@ -104,14 +104,14 @@ add_action('save_post', 'clear_db_cache_archives_list'); // 新发表文章/修�
 
          $subject = '您在 [' . get_option("blogname") . '] 的留言有了回應';
          $message = '<div style="background-color:#eef2fa;border:1px solid #d8e3e8;color:#111;padding:0 15px;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;">
-             <p>' . trim(get_comment($parent_id)->comment_author) . ', 您好!</p>
-             <p>您曾在《' . get_the_title($comment->comment_post_ID) . '》的留言:<br />'
-             . trim(get_comment($parent_id)->comment_content) . '</p>
-             <p>' . trim($comment->comment_author) . ' 给你的回复:<br />'
-             . trim($comment->comment_content) . '<br /></p>
-             <p>您可以点击 <a href="' . htmlspecialchars(get_comment_link($parent_id,array("type" => "all"))) . '">查看回复的完整內容</a></p>
-             <p>欢迎再度光临 <a href="' . get_option('home') . '">' . get_option('blogname') . '</a></p>
-             <p>(此邮件有系统自动发出, 请勿回复.)</p></div>';
+         <p>' . trim(get_comment($parent_id)->comment_author) . ', 您好!</p>
+         <p>您曾在《' . get_the_title($comment->comment_post_ID) . '》的留言:<br />'
+         . trim(get_comment($parent_id)->comment_content) . '</p>
+         <p>' . trim($comment->comment_author) . ' 给你的回复:<br />'
+         . trim($comment->comment_content) . '<br /></p>
+         <p>您可以点击 <a href="' . htmlspecialchars(get_comment_link($parent_id,array("type" => "all"))) . '">查看回复的完整內容</a></p>
+         <p>欢迎再度光临 <a href="' . get_option('home') . '">' . get_option('blogname') . '</a></p>
+         <p>(此邮件有系统自动发出, 请勿回复.)</p></div>';
          $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
          $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
          wp_mail( $to, $subject, $message, $headers );
@@ -120,45 +120,45 @@ add_action('save_post', 'clear_db_cache_archives_list'); // 新发表文章/修�
 
 //Compress the HTML code
 
-function wp_compress_html(){
-    function wp_compress_html_main ($buffer){
-        $initial=strlen($buffer);
-        $buffer=explode("<!--compressed-html-->", $buffer);
-        $count=count ($buffer);
-        for ($i = 0; $i <= $count; $i++){
-            if (stristr($buffer[$i], '<!--wp-compress-html no compression-->')) {
-                $buffer[$i]=(str_replace("<!--wp-compress-html no compression-->", " ", $buffer[$i]));
-            } else {
-                $buffer[$i]=(str_replace("\t", " ", $buffer[$i]));
-                $buffer[$i]=(str_replace("\n\n", "\n", $buffer[$i]));
-                $buffer[$i]=(str_replace("\n", "", $buffer[$i]));
-                $buffer[$i]=(str_replace("\r", "", $buffer[$i]));
-                while (stristr($buffer[$i], '  ')) {
-                    $buffer[$i]=(str_replace("  ", " ", $buffer[$i]));
-                }
-            }
-            $buffer_out.=$buffer[$i];
-        }
-        $final=strlen($buffer_out);   
-        $savings=($initial-$final)/$initial*100;   
-        $savings=round($savings, 2);   
-        $buffer_out.="\n<!--Before: $initial bytes; Now: $final bytes; Saving: $savings% -->";   
-    return $buffer_out;
-}
-ob_start("wp_compress_html_main");
-}
-add_action('get_header', 'wp_compress_html');
+ function wp_compress_html(){
+ 	function wp_compress_html_main ($buffer){
+ 		$initial=strlen($buffer);
+ 		$buffer=explode("<!--compressed-html-->", $buffer);
+ 		$count=count ($buffer);
+ 		for ($i = 0; $i <= $count; $i++){
+ 			if (stristr($buffer[$i], '<!--wp-compress-html no compression-->')) {
+ 				$buffer[$i]=(str_replace("<!--wp-compress-html no compression-->", " ", $buffer[$i]));
+ 			} else {
+ 				$buffer[$i]=(str_replace("\t", " ", $buffer[$i]));
+ 				$buffer[$i]=(str_replace("\n\n", "\n", $buffer[$i]));
+ 				$buffer[$i]=(str_replace("\n", "", $buffer[$i]));
+ 				$buffer[$i]=(str_replace("\r", "", $buffer[$i]));
+ 				while (stristr($buffer[$i], '  ')) {
+ 					$buffer[$i]=(str_replace("  ", " ", $buffer[$i]));
+ 				}
+ 			}
+ 			$buffer_out.=$buffer[$i];
+ 		}
+ 		$final=strlen($buffer_out);   
+ 		$savings=($initial-$final)/$initial*100;   
+ 		$savings=round($savings, 2);   
+ 		$buffer_out.="\n<!--Before: $initial bytes; Now: $final bytes; Saving: $savings% -->";   
+ 		return $buffer_out;
+ 	}
+ 	ob_start("wp_compress_html_main");
+ }
+ add_action('get_header', 'wp_compress_html');
 
 
 
 //添加友情链接
-add_filter( "pre_option_link_manager_enabled", "__return_true" );
+ add_filter( "pre_option_link_manager_enabled", "__return_true" );
 
 //禁止加载默认jq库
-function my_enqueue_scripts() {
-wp_deregister_script('jquery');
-}
-add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
+ function my_enqueue_scripts() {
+ 	wp_deregister_script('jquery');
+ }
+ add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
 
 
-?>
+ ?>

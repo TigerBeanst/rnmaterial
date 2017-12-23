@@ -15,37 +15,37 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style' => 'ol',
-					'short_ping' => true,
-					'avatar_size'=> 50,
-				) );
+			wp_list_comments( array(
+				'style' => 'ol',
+				'short_ping' => true,
+				'avatar_size'=> 50,
+			) );
 			?>
 		</ol>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<div id="comments-nav">
-<?php paginate_comments_links('prev_text=上一页&next_text=下一页');?>
-</div>
+			<div id="comments-nav">
+				<?php paginate_comments_links('prev_text=上一页&next_text=下一页');?>
+			</div>
 		<?php endif; ?>
 	<?php endif; ?>
 	<?php
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'amadeus' ); ?></p>
 	<?php endif; ?>
 	<?php 
-		$fields =  array(
-   			 'author' => '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="昵称*" id="author" name="author" type="text" value="" ' . esc_attr( $commenter['comment_author'] ) . '" size="50"' . $aria_req . ' /></div>',
-   			 'email'  => '<br><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="邮箱*" id="email" name="email" type="text" value="" ' . esc_attr(  $commenter['comment_author_email'] ) . '" size="50"' . $aria_req . ' /></div>',
-   			 'url'  => '<br><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="网站" id="url" name="url" type="text" value="" ' . esc_attr(  $commenter['comment_author_url'] ) . '" size="50"' . $aria_req . ' /></div>',
-		);
-		$args = array(
-			'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
-			'title_reply_after'  => '</h4>',
-			'fields' =>  $fields,
-			'class_submit' => 'btn btn-primary',
-			'comment_field' =>  '<br><div data-upgraded=",MaterialTextfield"><textarea class="mdl-textfield__input" id="comment" placeholder=" " name="comment" rows="5" aria-required="true" required  onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></div>',
-		);
-		comment_form($args);
+	$fields =  array(
+		'author' => '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="昵称*" id="author" name="author" type="text" value="" ' . esc_attr( $commenter['comment_author'] ) . '" size="50"' . $aria_req . ' /></div>',
+		'email'  => '<br><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="邮箱*" id="email" name="email" type="text" value="" ' . esc_attr(  $commenter['comment_author_email'] ) . '" size="50"' . $aria_req . ' /></div>',
+		'url'  => '<br><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="网站" id="url" name="url" type="text" value="" ' . esc_attr(  $commenter['comment_author_url'] ) . '" size="50"' . $aria_req . ' /></div>',
+	);
+	$args = array(
+		'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
+		'title_reply_after'  => '</h4>',
+		'fields' =>  $fields,
+		'class_submit' => 'btn btn-primary',
+		'comment_field' =>  '<br><div data-upgraded=",MaterialTextfield"><textarea class="mdl-textfield__input" id="comment" placeholder=" " name="comment" rows="5" aria-required="true" required  onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></div>',
+	);
+	comment_form($args);
 	?>
 </div>

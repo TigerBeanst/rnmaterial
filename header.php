@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <meta name="theme-color" content="#607D8D">
-    <meta name="author" content="">
-    <meta name="description" itemprop="description" content="">
-    <link rel="canonical" href="<?php echo bloginfo('url');?>">
-    <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/material.min.css">
-    <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/style.min.css">
-    <script src="<?php echo bloginfo('template_url');?>/js/material.min.js"></script>
-    <script>
-(function(u, c) {
-  var d = document, t = 'script', o = d.createElement(t),
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#607D8D">
+  <meta name="author" content="">
+  <meta name="description" itemprop="description" content="">
+  <link rel="canonical" href="<?php echo bloginfo('url');?>">
+  <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/material.min.css">
+  <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/style.min.css">
+  <script src="<?php echo bloginfo('template_url');?>/js/material.min.js"></script>
+  <script>
+    (function(u, c) {
+      var d = document, t = 'script', o = d.createElement(t),
       s = d.getElementsByTagName(t)[0];
-  o.src = u;
-  if (c) { o.addEventListener('load', function(e) { c(e); }); }
-  s.parentNode.insertBefore(o, s);
-})("<?php echo bloginfo('template_url');?>/js/pangu.js", function() {
-  pangu.spacingPage();
-});
+      o.src = u;
+      if (c) { o.addEventListener('load', function(e) { c(e); }); }
+      s.parentNode.insertBefore(o, s);
+    })("<?php echo bloginfo('template_url');?>/js/pangu.js", function() {
+      pangu.spacingPage();
+    });
 </script>    <!--[if lte IE 9]>
       <link rel="stylesheet" href="/css/ie-blocker.css">
       <script src="/js/ie-blocker.zhCN.js"></script>
@@ -31,27 +31,27 @@
     <style>body{background-color:#dedede}#scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{background-color:#fff}p img{height: auto;}</style>
     <script src="<?php echo bloginfo('template_url');?>/js/jquery.min.js"</script>
     <script>function Queue() {
-        function e(e) {
-          this.debug && console.log("Offered a Queued Function."),
-          "function" == typeof e ? this.dataStore.push(e) : console.log("You must offer a function.")
-        }
-        function t() {
-          return this.debug && console.log("Polled a Queued Function."),
-          this.dataStore.shift()
-        }
-        function o() {
-          var e = this.poll();
-          void 0 !== e && (this.debug && console.log("Run a Queued Function."), e())
-        }
-        function u() {
-          this.debug = !0
-        }
-        this.dataStore = [],
-        this.offer = e,
-        this.poll = t,
-        this.execNext = o,
-        this.debug = !1,
-        this.startDebug = u
+      function e(e) {
+        this.debug && console.log("Offered a Queued Function."),
+        "function" == typeof e ? this.dataStore.push(e) : console.log("You must offer a function.")
       }
-      var queue = new Queue</script>
-     <?php wp_head();?></head>
+      function t() {
+        return this.debug && console.log("Polled a Queued Function."),
+        this.dataStore.shift()
+      }
+      function o() {
+        var e = this.poll();
+        void 0 !== e && (this.debug && console.log("Run a Queued Function."), e())
+      }
+      function u() {
+        this.debug = !0
+      }
+      this.dataStore = [],
+      this.offer = e,
+      this.poll = t,
+      this.execNext = o,
+      this.debug = !1,
+      this.startDebug = u
+    }
+  var queue = new Queue</script>
+  <?php wp_head();?></head>
