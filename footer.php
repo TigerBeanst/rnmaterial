@@ -12,8 +12,8 @@
 				<div id="copyright">Copyright&nbsp;©&nbsp;2016&nbsp;-
 					<script type="text/javascript">var fd = new Date;
 				document.write("&nbsp;" + fd.getFullYear() + "&nbsp;")</script><?php bloginfo("name"); ?>
-				<br>本博客使用
-				<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank" class="footer-develop-a">CC BY-NC-SA 3.0</a>进行许可</div>
+				<br>本博客使用 
+				<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank" class="footer-develop-a">CC BY-NC-SA 3.0</a> 进行许可</div>
 			</div>
 		</footer>
 		<script src="<?php echo bloginfo('template_url');?>/js/lazyload.min.js"></script>
