@@ -15,3 +15,6 @@ RnMaterial 是一款基于 [hexo-theme-material](https://github.com/viosey/hexo-
 - [x] ~~主页无法翻页（准备通过ajax加载直接跳过这个问题）~~ 已修复
 - [ ] 侧边栏大部分已可通过 WordPress 后台控制，但目前无法折叠二级菜单
 - [x] ~~首次访问需要刷新，否则白屏~~ [已修复](https://github.com/hjthjthjt/rnmaterial/pull/1)
+
+## 非必要性提示
++ 文章默认使用 CC BY-NC-SA 3.0 协议，如需更改请自行改动 `single.php` ~~（也许未来某天会加入设置页面）~~
