@@ -14,7 +14,7 @@
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
               <div id="author-avatar">
-                <img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="32px" height="32px" alt="avatar"></div>
+                <?php echo get_avatar(1,32,avatar); ?></div>
                 <div>
 			  <!--
          Modify-->

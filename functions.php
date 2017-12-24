@@ -13,7 +13,6 @@ set_post_thumbnail_size( 884, 280, true );
 register_nav_menus( array(
 	'sidebar_menu_one' => '侧边栏一菜单' ,
 	'sidebar_menu_two' => '侧边栏二菜单' ,
-	'sidebar_menu_three' => '侧边栏三菜单' ,
 ) );
 
  //ajax评论

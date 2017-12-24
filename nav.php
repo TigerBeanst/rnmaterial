@@ -12,30 +12,13 @@
         </span>
       </button>
       <div class="sidebar-image">
-        <img src="<?php bloginfo('template_url');?>/img/avatar.png" alt="avatar"></div>
+        <?php echo get_avatar(1,54,avatar); ?></div>
         <a class="sidebar-brand"><?php echo bloginfo('name'); ?></a>
       </div>
       <ul class="nav sidebar-nav">
-        <li class="dropdown">
-          <ul id="settings-dropdown" class="dropdown-menu">
-            <li>
-              <!--请自行修改邮箱，或改为所需文本-->
-			  <!--
-			  此处的图标名称参考：
-			  http://google.github.io/material-design-icons/#which-icons-should-be-mirrored-for-rtl- （这里有个-）
-			  https://material.io/icons/
-     -->
-     
-     <a href="mailto:rnmaterial@www.com" target="_blank" title="Email Me">
-      <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>Email Me</a></li>
-      <li>
-        <a href="https://github.com/hjthjthjt/rnmaterial" target="_blank" title="nfz.moe">
-          <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">explorer</i>RnMaterial/Github</a></li>
-        </ul>
-      </li>
       
       <!--请结合HTML自行修改侧边栏内容-->
-      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_two' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
+      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_one' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
       <li class="divider"></li>
-      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_three' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
+      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_two' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
     </ul>
