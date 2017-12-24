@@ -26,7 +26,7 @@
         <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
           <i class="material-icons mdl-color-text--white" role="presentation">search</i></label>
           <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
-            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder="">
+            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="s" results="0" placeholder="">
             <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
           </form>
         </div>

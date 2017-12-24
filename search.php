@@ -1,78 +1,68 @@
-<?php get_header();?>
-<script>
-	function pageScroll() {
-		window.scrollBy(0,-50);
-		scrolldelay = setTimeout('pageScroll()',10);
-		if(document.documentElement.scrollTop==0)
-			clearTimeout(scrolldelay);
-	}
-</script>
-<div style="position: fixed;bottom: 10px;right: 10px;">
-	<a href="javascript:pageScroll();" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">navigation</i></a>
-</div>
-<div class="row" style="text-align: center;" id="searchform">
-	<div class="col m6 s12 offset-m3 input-field">
-		<form method="get" action="/">
-			<input type="text" id="s" name="s" class="validate">
-			<label for="s">在此搜索</label>
-		</form>
-	</div>
-</div>
-<div id="wrapper">
-	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-		<div class="row">
-			<div class="col m6 s12 offset-m3">
-				<div class="card hoverable" style="overflow: hidden;">
-					<?php if(has_post_thumbnail()) :?>
-						<div class="card-image waves-effect waves-block waves-light" onclick="javascript:window.location.href='<?php the_permalink();?>'">
-							<?php echo the_post_thumbnail('',array('class' => 'responsive-img'));?>
+<?php get_header(); ?>
+<body id="scheme-Paradox" class="lazy">
+	<div class="material-layout mdl-js-layout has-drawer is-upgraded">
+		<main class="material-layout__content" id="main">
+			<div id="top"></div>
+			<button class="MD-burger-icon sidebar-toggle">
+				<span class="MD-burger-layer"></span>
+			</button>
+			<nav class="nav-body" style="margin-bottom: 50px">
+				<h4 style="margin-left: 10px;margin-top: 10px!important"><?php printf( __( '对 %s 的搜索结果如下', 'twentytwelve' ), '<code style="margin: 0 2px;padding: 0 5px;background-color: rgba(0,0,0,.04);border-radius: 3px;">' . get_search_query() . '</code>' ); ?></h4>
+			</nav>
+			<div class="material-index mdl-grid">
+
+				<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
+					<div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+						<div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");echo $img_src[0]; ?>)">
+							<p class="article-headline-p">
+								<a href="<?php the_permalink();?>"><?php the_title();?></a></p>
+							</div>
+							<div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content"><?php the_excerpt();?>
+							</div>
+							<div id="post_entry-info">
+								<div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+									<div id="author-avatar">
+										<img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="44px" height="44px" alt="neoFelhz's avatar"></div>
+										<div>
+											<strong><?php the_author(); ?></strong>
+											<span><?php the_time('M d, Y')?></span></div>
+										</div>
+										<div id="post_entry-right-info">
+											<span>
+												<a href="<?php the_permalink();?>" target="_self">阅读全文</a></span>
+											</div>
+										</div>
+									</div>
+								<?php endwhile; ?>
+							<?php endif; ?>
+
+							<nav class="nav-body">
+								<div class="nav-next"><?php next_posts_link(__('<i class="material-icons sidebar-material-icons">navigate_before</i>')) ?></div>
+								<div class="nav-prev"><?php previous_posts_link(__('<i class="material-icons sidebar-material-icons">navigate_next</i>')) ?></div>
+							</nav>
+							<script type="text/ls-javascript" id="thumbnail-script">var randomNum;
+
+								var locatePost = $('.locate-thumbnail-symbol').next();
+								for (var i = 0; i < 5; i++) {
+								randomNum = Math.floor(Math.random() * 19 + 1);
+
+								locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-' + randomNum);
+								locatePost.children('.post_thumbnail-random').attr('data-original', 'https://materialcdn.b0.upaiyun.com/img/random/material-' + randomNum + '.png');
+								$('.post_thumbnail-random').addClass('lazy');
+
+								locatePost = locatePost.next();
+							}</script>
 						</div>
-					<?php endif; ?>
-					<div class="card-content">
-						<h1 class="card-title grey-text text-darken-4"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
-						<h6 class="valign-wrapper grey-text">
-							<i class="material-icons tiny valign">alarm</i><?php the_time('Y-m-d')?>
-							<i class="material-icons tiny valign" style="margin-left: 10px;">face</i><?php the_author();?>
-						</h6>
-						<p><?php echo wp_trim_words(get_the_content(),200);?></p>
+						<?php get_template_part( 'nav', 'index' ); ?>
 					</div>
-					<div class="card-action">
-						<p><a title="<?php the_title();?>" href="<?php the_permalink();?>">阅读全文...</a></p>
+					<!--START-The image of footer-->
+					<span id="footer-image">
+
+					</span>
+					<!--END-The image of footer-->
+				</aside>
+				<div id="back-to-top" class="toTop-wrap">
+					<a href="#top" class="toTop">
+						<i class="material-icons footer_top-i">expand_less</i></a>
 					</div>
-				</div>
-			</div>
-		</div>
-	<?php endwhile; else:?>
-	<div class="row">
-		<div class="col m6 s12 offset-m3">
-			<div class="card hoverable" style="overflow: hidden;">
-				<div class="card-content">
-					<h1 class="card-title grey-text text-darken-4"><a>发生错误...</a></h1>
-					<p>没有找到您想要的搜索结果，为您推荐以下几篇文章</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php
-	$args = array( 'numberposts' => 2, 'orderby' => 'rand', 'post_status' => 'publish' );
-	$rand_posts = get_posts( $args );
-	foreach( $rand_posts as $post ) : ?>
-	<div class="row">
-		<div class="col m6 s12 offset-m3">
-			<div class="card hoverable" style="overflow: hidden;">
-				<div class="card-content">
-					<h1 class="card-title grey-text text-darken-4"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
-				</div>
-				<div class="card-action">
-					<p><a title="<?php the_title();?>" href="<?php the_permalink();?>">阅读全文...</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php endforeach; ?>
-<?php endif; ?>
-</div>
-<div style="text-align: center; margin-bottom: 20px;" class="row">
-	<?php posts_nav_link(" ",'<div class="btn-floating btn-large waves-effect waves-light red hoverable" style="margin-right: 10px;"><i class="material-icons">chevron_left</i></div>','<div class="btn-floating btn-large waves-effect waves-light red hoverable" style="margin-left: 10px;"><i class="material-icons">chevron_right</i></div>')?>
-</div>
-<?php get_footer();?>
+					<?php get_footer(); ?> 
