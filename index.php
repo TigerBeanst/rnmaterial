@@ -70,7 +70,7 @@
                       <div id="post_entry-info">
                         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600">
                           <div id="author-avatar">
-                            <img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="44px" height="44px" alt="neoFelhz's avatar"></div>
+                            <?php echo get_avatar(1,44,avatar); ?></div>
                             <div>
                               <strong><?php the_author(); ?></strong>
                               <span><?php the_time('M d, Y')?></span></div>
