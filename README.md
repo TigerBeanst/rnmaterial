@@ -14,4 +14,4 @@ RnMaterial 是一款基于 [hexo-theme-material](https://github.com/viosey/hexo-
 
 ## 非必要性提示
 + 文章默认使用 `CC BY-NC-SA 3.0`协议，如需更改请自行改动 `single.php` ~~（也许未来某天会加入设置页面）~~
-+ 主题默认你的博客放在域名根目录（即 `//domain.com/` 即可打开你的博客，而不是例如 `//domain.com/wp`）。如果你的博客状态属于后者，影响近限加入的 [`OwO表情`](https://github.com/DIYgod/OwO)，请自行更改 `js/OwO.json` 中内容，一般情况下，如果你放置在例如 `wp` 的目录中，你应该将 `/wp-content/themes/rnmaterial/img` 改为 `/wp/wp-content/themes/rnmaterial/img`
++ 主题默认你的博客放在域名根目录（即 `//domain.com/` 即可打开你的博客，而不是例如 `//domain.com/wp`）。如果你的博客状态属于后者，影响仅限加入的 [`OwO表情`](https://github.com/DIYgod/OwO)，请自行更改 `js/OwO.json` 中内容，一般情况下，如果你放置在例如 `wp` 的目录中，你应该将 `/wp-content/themes/rnmaterial/img` 改为 `/wp/wp-content/themes/rnmaterial/img`
