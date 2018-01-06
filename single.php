@@ -37,7 +37,7 @@
                             </div>
                           <?php endwhile; endif;?>
                         </div>
-                        <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+                        <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col" style="padding-bottom: 15px!important;">
                          <?php $current_category = get_the_category();$prev_post = get_previous_post($current_category,'');$next_post = get_next_post($current_category,'')?>
                          <?php if (!empty( $prev_post )): ?>
                            <a href="<?php echo get_permalink( $prev_post->ID ); ?>" id="post_nav-newer" class="prev-content">

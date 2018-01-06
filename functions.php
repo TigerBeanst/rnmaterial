@@ -159,5 +159,12 @@ function comment_mail_notify($comment_id) {
  }
  add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
 
+//来自知更鸟的评论带图
+add_action('comment_text', 'comments_embed_img', 2);
+function comments_embed_img($comment) {
+    $size = auto;
+    $comment = preg_replace(array('#(http://([^\s]*)\.(jpg|gif|png|JPG|GIF|PNG))#','#(https://([^\s]*)\.(jpg|gif|png|JPG|GIF|PNG))#'),'<img src="$1" alt="comment" style="width:'.$size.'; height:'.$size.'" />', $comment);
+    return $comment;
+}
 
  ?>
