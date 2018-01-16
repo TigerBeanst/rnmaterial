@@ -4,6 +4,15 @@ RnMaterial 是一款基于 [hexo-theme-material](https://github.com/viosey/hexo-
 ## 演示站点
 [甲烃气瓶](https://jakting.com)
 
+## 关于 Prism 代码语法高亮
+去除了主题原本的样式，理论兼容其他 Prism 语法高亮
+目前测试了 [WP Editor.MD](https://wordpress.org/plugins/wp-editormd/) Markdown 编辑器，正常工作，其他编辑器或单独语法高亮暂未测试，若失败请发 issue
+**推荐使用 `default` 主题**
+
+### 如果 WP Editor.MD 中的语法高亮不工作，请尝试以下两种解决方式：
+1. 进入 WP Editor.MD 插件后台，在`语法高亮选项`中`语法高亮加载模式`从`自动加载模式`改为`自定义加载模式`，保存并刷新任意文章后，再次设置为`自动加载模式`并保存，似乎可以正常工作
+2. **保证文章中的代码块均选择了正确的渲染语言，例如 `npm install -g hexo-cli` 应正确选择为 `Bash` 而不是 `Shell`，貌似只要文章中有正确的渲染，其他就算不正确也会正确加载代码样式（但是没有对应的高亮）**
+
 ## 使用须知
 + ***建议在 `仪表盘>设置>阅读` 中将 `博客页面至多显示` 改为 `5篇文章`***
 + 主题在`Microsoft Edge`浏览器上会无法显示图标字体，不修，谢谢，我不喜欢 Edge
