@@ -33,7 +33,9 @@ if ( post_password_required() ) {
 		?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'amadeus' ); ?></p>
 	<?php endif; ?>
+	<?php if(get_RnMaterial('owo_toggle')== 1){ ?>
 	<link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/css/OwO.min.css">
+	<?php } ?>
 	<?php 
 	$fields =  array(
 		'author' => '<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" data-upgraded=",MaterialTextfield"><input class="mdl-textfield__input" placeholder="昵称*" id="author" name="author" type="text" value="" ' . esc_attr( $commenter['comment_author'] ) . '" size="50"' . $aria_req . ' /></div>',
@@ -45,11 +47,11 @@ if ( post_password_required() ) {
 		'title_reply_after'  => '</h4>',
 		'fields' =>  $fields,
 		'class_submit' => 'btn btn-primary',
-		'comment_field' =>  '<br><div data-upgraded=",MaterialTextfield"><textarea class="mdl-textfield__input OwO-textarea" id="comment" placeholder=" " name="comment" rows="5" aria-required="true" required  onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea>
-	<div class="OwO"></div></div>',
+		'comment_field' =>  '<br><div data-upgraded=",MaterialTextfield"><textarea class="mdl-textfield__input OwO-textarea" id="comment" placeholder=" " name="comment" rows="5" aria-required="true" required  onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea><div class="OwO"></div></div>',
 	);
 	comment_form($args);
 	?>
+	<?php if(get_RnMaterial('owo_toggle')== 1){ ?>
 	<script src="<?php echo bloginfo('template_url');?>/js/OwO.min.js"></script>
 	<script>
         var OwO_demo = new OwO({
@@ -62,4 +64,5 @@ if ( post_password_required() ) {
             maxHeight: '250px'
         });
     </script>
+    <?php } ?>
 </div>

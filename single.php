@@ -32,7 +32,7 @@
                         
                         <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out"><?php the_content();?>
                           <blockquote style="margin:2em 0 0;padding:.5em 1em;border-left:3px solid #f44336;background-color:#f5f5f5;list-style:none">
-                            <p><b>本文采用 <a rel="nofollow noopener" href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0</a> 协议进行许可，在您遵循此协议的情况下，可以自由共享与演绎本文章。</b>
+                            <p><b>本文采用 <a rel="nofollow noopener" href="<?php echo get_RnMaterial('cc_url','https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh'); ?>" target="_blank"><?php echo get_RnMaterial('cc_name','CC BY-NC-SA 3.0'); ?></a> 协议进行许可，在您遵循此协议的情况下，可以自由共享与演绎本文章。</b>
                               <br><b>本文链接：</b><a href="<?php the_permalink();?>"><?php the_permalink();?></a></p></blockquote>
                             </div>
                           <?php endwhile; endif;?>

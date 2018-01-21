@@ -17,8 +17,7 @@
       </div>
       <ul class="nav sidebar-nav">
       
-      <!--请结合HTML自行修改侧边栏内容-->
-      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_one' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
+      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_one' ) ) {wp_nav_menu(array('theme_location' =>'sidebar_menu_one'));} ?></div>
       <li class="divider"></li>
-      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_two' ) ) {wp_nav_menu('container_id=navmenu');} ?></div>
+      <div style="margin-left:-40px!important;"><?php if ( has_nav_menu( 'sidebar_menu_two' ) ) {wp_nav_menu(array('theme_location' =>'sidebar_menu_two'));} ?></div>
     </ul>
