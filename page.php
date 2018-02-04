@@ -14,7 +14,8 @@
               <p class="article-headline-p"><?php the_title();?></p></div>
               <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                 <div id="author-avatar">
-                  <img src="<?php echo bloginfo('template_url');?>/img/avatar.png" width="44px" height="44px" alt="Author Avatar"></div>
+                  <?php echo get_avatar(1,44,avatar); ?></div>
+                <div>
                   <div>
                     <strong><?php the_author(); ?></strong>
                     <span><?php the_time('M d, Y')?></span></div>
