@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<?php $count_posts = wp_count_posts(); $published_posts = $count_posts->publish;?>
+<?php $post_nn = get_RnMaterial("posts_num","5"); ?>
 <body id="scheme-Paradox" class="lazy">
   <div class="material-layout mdl-js-layout has-drawer is-upgraded">
     <main class="material-layout__content" id="main">
@@ -61,7 +63,7 @@
                 
                 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
                   <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-                    <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");echo $img_src[0]; ?>)">
+                    <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");if($img_src){echo $img_src[0];}else{$rann=rand(1,19);echo get_bloginfo('template_url').'/img/random/material-'.$rann.'.png';}; ?>)">
                       <p class="article-headline-p">
                         <a href="<?php the_permalink();?>"><?php the_title();?></a></p>
                       </div>
@@ -84,22 +86,12 @@
                         <?php endwhile; ?>
                       <?php endif; ?>
                       
+                      <?php if($published_posts>$post_nn){ ?>
                       <nav class="nav-body">
                         <div class="nav-next"><?php next_posts_link(__('<i class="material-icons sidebar-material-icons">navigate_before</i>')) ?></div>
                         <div class="nav-prev"><?php previous_posts_link(__('<i class="material-icons sidebar-material-icons">navigate_next</i>')) ?></div>
                       </nav>
-                      <script type="text/ls-javascript" id="thumbnail-script">var randomNum;
-
-                        var locatePost = $('.locate-thumbnail-symbol').next();
-                        for (var i = 0; i < 5; i++) {
-                        randomNum = Math.floor(Math.random() * 19 + 1);
-
-                        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-' + randomNum);
-                        locatePost.children('.post_thumbnail-random').attr('data-original', 'https://materialcdn.b0.upaiyun.com/img/random/material-' + randomNum + '.png');
-                        $('.post_thumbnail-random').addClass('lazy');
-
-                        locatePost = locatePost.next();
-                      }</script>
+                      <?php }; ?>
                     </div>
                     <?php get_template_part( 'nav', 'index' ); ?>
                   </div>

@@ -99,6 +99,15 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
+		'name' => __( '首页显示文章数', 'theme-textdomain' ),
+		'desc' => __( '请输入整数，不要留空，留空时<b>默认为 5</b>', 'theme-textdomain' ),
+		'id' => 'posts_num',
+		'std' => '5',
+		'class' => 'mini',
+		'type' => 'text'
+	);
+
+	$options[] = array(
 		'name' => __( '背景颜色', 'theme-textdomain' ),
 		'desc' => __( '请输入 RGB 值，不要留空，留空时背景纯白。<b>默认为 #dedede</b>', 'theme-textdomain' ),
 		'id' => 'background_color',

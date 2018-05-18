@@ -10,7 +10,7 @@
         <div class="material-post mdl-grid">
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");echo $img_src[0]; ?>)">
+            <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(<?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");if($img_src){echo $img_src[0];}else{$rann=rand(1,19);echo get_bloginfo('template_url').'/img/random/material-'.$rann.'.png';}; ?>)">
               <p class="article-headline-p"><?php the_title();?></p></div>
               <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
                 <div id="author-avatar">

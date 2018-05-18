@@ -135,6 +135,13 @@ function comment_mail_notify($comment_id) {
  }
  add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts', 1 );
 
+//加速 Gravatar 头像
+function replace_gravatar($avatar) {
+	$avatar = str_replace(array("//gravatar.com/", "//secure.gravatar.com/", "//www.gravatar.com/", "//0.gravatar.com/", "//1.gravatar.com/", "//2.gravatar.com/", "//cn.gravatar.com/"), "//cdn.v2ex.com/gr", $avatar);
+	return $avatar;
+}
+add_filter( 'get_avatar', 'replace_gravatar' );
+
 //来自知更鸟的评论带图
 add_action('comment_text', 'comments_embed_img', 2);
 function comments_embed_img($comment) {
@@ -168,4 +175,14 @@ function mail_smtp( $phpmailer ) {
 	$phpmailer->IsSMTP();
 }
 
+//修改每页显示的文章数
+function custom_posts_per_page($query){
+	if(is_home()){
+		$query->set('posts_per_page',get_RnMaterial('posts_num','5'));//首页每页显示8篇文章
+	}
+	if(is_search()){
+		$query->set('posts_per_page',-1);//搜索页显示所有匹配的文章，不分页
+	}
+}
+add_action('pre_get_posts','custom_posts_per_page');
 ?>
