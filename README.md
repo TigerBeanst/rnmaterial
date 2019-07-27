@@ -1,4 +1,6 @@
-**不再于 Github 更新，仅用于更新打包后的主题。请前往 [Jartip's Gitea](https://git.jakting.com/hjthjthjt/rnmaterial) 查看代码**
+**不再于 Github 更新代码，此处仅用于更新打包后的主题。
+请前往 [Jartip's Gitea](https://git.jakting.com/hjthjthjt/rnmaterial) 查看代码。
+Issue 等依然可以发在 Github 上。**
 
 # RnMaterial For WordPress
 RnMaterial 是一款基于 [hexo-theme-material](https://github.com/viosey/hexo-theme-material) 的 WordPress 主题。
